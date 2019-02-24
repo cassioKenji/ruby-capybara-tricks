@@ -8,4 +8,8 @@ class Browser
     scenario.passed? ? result = "passed" : result = "failed"
     return result
   end
+
+  def self.delete_all_cookies
+    Capybara.current_session.driver.browser.manage.delete_all_cookies
+  end
 end
